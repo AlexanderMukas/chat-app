@@ -4,7 +4,19 @@ import io from 'socket.io-client';
 
 import "./Chat.css";
 
-const Chat = () => {
+
+
+
+
+
+const Chat = ( { location } ) => {
+    useEffect( () => {
+       const data = queryString.parse(location.search);
+       console.log(data);
+
+    });
+
+
     return (
         <h1>This is Chat</h1>
     );
