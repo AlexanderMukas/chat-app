@@ -17,8 +17,14 @@ const io = socketio(server);
 io.on('connection', (socket) => {
     console.log('We have a new connection!!!');
     // 1. join event
-    socket.on('join', ( {name, room}) => {
+    socket.on('join', ( {name, room}, callback) => {
         console.log(name, room);      // Alexander room1 from client
+        const error = true;
+        if(error){
+            callback( {error: 'error'});
+        }
+
+        
     });
 
 

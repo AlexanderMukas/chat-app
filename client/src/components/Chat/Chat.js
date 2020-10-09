@@ -30,7 +30,10 @@ const Chat = ( { location } ) => {
         //// socket events
         // 1. join event
         // socket.emit('join', {name: name, room: room});
-        socket.emit('join', {name, room});
+        socket.emit('join', {name, room}, ( {error} ) => {
+            // executed when call - "callback( {error: 'error'})" from server
+            alert(error);
+        });
 
     }, [ENDPOINT, location.search]);
 
