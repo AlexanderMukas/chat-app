@@ -1,6 +1,6 @@
 // create helper functions: addUser, removeUser, getUser, getUsersInRoom
 
-const e = require("express");
+// const e = require("express");
 
 const users = [];
 
@@ -32,3 +32,5 @@ const removeUser = ( id ) => {
 const getUser = ( id ) => users.find( user => user.id === id);
 
 const getUsersInRoom = ( room ) => users.filter( user => user.room === room);
+
+module.exports = { addUser, removeUser, getUser, getUsersInRoom};
