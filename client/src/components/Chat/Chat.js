@@ -27,8 +27,8 @@ const Chat = ( { location } ) => {
         setName(name);
         setRoom(room);
 
-        // socket events
-        // join event
+        //// socket events
+        // 1. join event
         // socket.emit('join', {name: name, room: room});
         socket.emit('join', {name, room});
 
