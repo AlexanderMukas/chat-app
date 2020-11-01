@@ -2,6 +2,10 @@ const express = require('express');
 const socketio = require('socket.io');
 const http = require('http');
 
+// 1:00:43
+
+const { addUser, removeUser, getUser, getUsersInRoom } = require('./users');
+
 
 const PORT = process.env.PORT || 5000;
 
@@ -19,12 +23,9 @@ io.on('connection', (socket) => {
     // 1. join event
     socket.on('join', ( {name, room}, callback) => {
         console.log(name, room);      // Alexander room1 from client
-        const error = true;
         
-        
-        // if(error){
-        //     callback( {error: 'error'});
-        // }
+
+
 
         
     });
