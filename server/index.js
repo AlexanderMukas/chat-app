@@ -19,15 +19,15 @@ const io = socketio(server);
 
 // socket.io code:
 io.on('connection', (socket) => {
-    console.log('We have a new connection!!!');
     // 1. join event
     socket.on('join', ( {name, room}, callback) => {
-        console.log(name, room);      // Alexander room1 from client
+        const { error, user} = addUser( { id: socket.id, name, room} );
         
-
-
-
+        // if error
+        if(error) return callback(error);
         
+        //if all okay
+        socket.join(user.room);     
     });
 
 
