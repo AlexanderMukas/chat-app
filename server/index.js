@@ -20,9 +20,11 @@ io.on('connection', (socket) => {
     socket.on('join', ( {name, room}, callback) => {
         console.log(name, room);      // Alexander room1 from client
         const error = true;
-        if(error){
-            callback( {error: 'error'});
-        }
+        
+        
+        // if(error){
+        //     callback( {error: 'error'});
+        // }
 
         
     });
