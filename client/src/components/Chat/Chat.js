@@ -49,15 +49,36 @@ const Chat = ( { location } ) => {
 
     useEffect( () => {
         socket.on('message', (message) => {
-
+            setMessages([...messages, message]);
         })
-    })
+    }, [messages]);
+
+
+    // function for sending messages
+
+    const sendMessage = (event) => {
+        event.preventDefault(); // erase title of message in input
+
+        if(message) {
+            socket.emit( 'sendMessage', message, () => setMessage('') );
+        }
+    }
+
+
+
 
     return (
-        <>
-            <h1>This is Chat</h1>
-            <h2>User: {name} , Room: {room}</h2>
-        </>
+        <div className="outerConteiner">
+
+            <div className="container">
+                <input 
+                    value = {message}
+                    onChange = { (event) => setMessage(event.target.value)}
+                    onKeyPress = { event => event.key === 'Enter' ? sendMessage(event) : null }
+                />
+            </div>
+
+        </div>
     );
 };
 
