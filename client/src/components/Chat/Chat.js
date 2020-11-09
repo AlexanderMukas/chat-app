@@ -12,6 +12,10 @@ let socket;
 const Chat = ( { location } ) => {
     const [name, setName] = useState('');
     const [room, setRoom] = useState('');
+
+    const [message, setMessage] = useState('');
+    const [messages, setMessages] = useState([]);
+
     const ENDPOINT = 'localhost:5000';
 
     useEffect( () => {
@@ -31,7 +35,8 @@ const Chat = ( { location } ) => {
         // 1. join event
         // socket.emit('join', {name: name, room: room});
         socket.emit('join', {name, room}, ( ) => {
-            
+            // 1:08:48
+
 
         });
 
@@ -42,6 +47,11 @@ const Chat = ( { location } ) => {
 
     }, [ENDPOINT, location.search]);
 
+    useEffect( () => {
+        socket.on('message', (message) => {
+
+        })
+    })
 
     return (
         <>
