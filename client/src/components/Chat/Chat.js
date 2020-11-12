@@ -8,6 +8,8 @@ import "./Chat.css";
 
 let socket;
 
+import './Chat.css';
+
 
 const Chat = ( { location } ) => {
     const [name, setName] = useState('');
@@ -70,12 +72,15 @@ const Chat = ( { location } ) => {
     return (
         <div className="outerConteiner">
 
-            <div className="container">
-                <input 
+            <div className="container" >
+                <InfoBar />
+
+
+                {/* <input 
                     value = {message}
                     onChange = { (event) => setMessage(event.target.value)}
                     onKeyPress = { event => event.key === 'Enter' ? sendMessage(event) : null }
-                />
+                /> */}
             </div>
 
         </div>
