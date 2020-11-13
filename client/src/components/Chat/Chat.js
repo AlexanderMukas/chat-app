@@ -78,7 +78,10 @@ const Chat = ( { location } ) => {
                 <InfoBar room={room} />
 
 
-                <Messages />
+                <Messages 
+                 messages={messages}
+                 name={name} 
+                />
 
 
 
