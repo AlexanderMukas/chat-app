@@ -4,12 +4,12 @@ import './InfoBar.css';
 import closeIcon from '../../icons';
 import onlineIcon from '../../icons';
 
-
-const InfoBar = () => {
+// import property room from Chat component
+const InfoBar = ( { room } ) => {
     <div className="infobar">
         <div className="leftInnerContainer">
             <img className="onlineIcon" src={onlineIcon} alt="online image" />
-            <h3>roomName</h3>
+        <h3>{room}</h3>
         </div>
         <div className="rightInnerContainer">
             <a href="/">  

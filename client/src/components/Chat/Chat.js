@@ -73,7 +73,7 @@ const Chat = ( { location } ) => {
         <div className="outerConteiner">
 
             <div className="container" >
-                <InfoBar />
+                <InfoBar room={room} />
 
 
                 {/* <input 
