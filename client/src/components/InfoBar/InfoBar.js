@@ -1,11 +1,11 @@
 import React from 'react';
 
 import './InfoBar.css';
-import closeIcon from '../../icons';
-import onlineIcon from '../../icons';
+import closeIcon from '../../icons/closeIcon.png';
+import onlineIcon from '../../icons/onlineIcon.png';
 
 // import property room from Chat component
-const InfoBar = ( { room } ) => {
+const InfoBar = ( { room } ) => (
     <div className="infobar">
         <div className="leftInnerContainer">
             <img className="onlineIcon" src={onlineIcon} alt="online image" />
@@ -18,7 +18,7 @@ const InfoBar = ( { room } ) => {
 
         </div>
     </div>
-}
+);
 
 
 
