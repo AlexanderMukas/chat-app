@@ -4,8 +4,8 @@ import ScrollToBottom from 'react-scroll-to-bottom';
 import './Messages.css';
 
 //time of message
-const time = new Date().toLocaleTimeString();
-console.log(time);
+// const time = new Date().toLocaleTimeString();
+// console.log(time);
 
 const Messages = ({ messages, name }) => (
     <ScrollToBottom>
