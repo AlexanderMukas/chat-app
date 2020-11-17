@@ -21,10 +21,10 @@ const addUser = ( {id, name, room}) => {
     return { user };
 }
 
-const removeUser = ( id ) => {
+const removeUser = (id) => {
     const index = users.findIndex( user => user.id === id); // find index from ID
     if(index !== -1){
-        return users.slice(index, 1)[0]
+        return users.splice(index, 1)[0]
     } 
 }
 
