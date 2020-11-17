@@ -53,7 +53,7 @@ io.on('connection', (socket) => {
         // console.log('User has left!!!');
         // 1:39:17
         const user = removeUser(socket.id);
-        console.log(user);
+        // console.log(user);
 
         if(user) {
             io.to(user.room).emit('message', { user:'admin', text: `${user.name} has left.` })
