@@ -99,6 +99,7 @@ const Chat = ( { location } ) => {
                     onKeyPress = { event => event.key === 'Enter' ? sendMessage(event) : null }
                 /> */}
             </div>
+            <TextContainer users={ users }/>
 
         </div>
     );
