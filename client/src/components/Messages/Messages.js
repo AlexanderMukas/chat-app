@@ -9,7 +9,7 @@ import './Messages.css';
 // console.log(time);
 
 const Messages = ({ messages, name }) => (
-    <ScrollToBottom>
+    <ScrollToBottom className="messages">
         {messages.map(
             (message, index) => <div key={index}>
                 <Message 
