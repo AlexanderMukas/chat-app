@@ -4,14 +4,13 @@ import io from 'socket.io-client';
 
 import "./Chat.css";
 
+// Components :
 import InfoBar from "../InfoBar/InfoBar";
 import Input from "../Input/Input";
 import Messages from "../Messages/Messages";
+import TextContainer from "../TextContainer/TextContainer";
 
 let socket;
-
-
-
 
 const Chat = ( { location } ) => {
     const [name, setName] = useState('');
@@ -70,9 +69,6 @@ const Chat = ( { location } ) => {
         });
     }, []);
 
-
-
-
     // function for sending messages
 
     const sendMessage = (event) => {
@@ -83,8 +79,6 @@ const Chat = ( { location } ) => {
         }
     }
     console.log(message, messages);
-
-
 
     return (
         <div className="outerContainer">
@@ -98,21 +92,12 @@ const Chat = ( { location } ) => {
                  name={name} 
                 />
 
-
-
-
                 <Input 
                  message={message}
                  setMessage={setMessage}
                  sendMessage={sendMessage}
                 />
 
-
-                {/* <input 
-                    value = {message}
-                    onChange = { (event) => setMessage(event.target.value)}
-                    onKeyPress = { event => event.key === 'Enter' ? sendMessage(event) : null }
-                /> */}
             </div>
             <TextContainer users={ users }/>
 
