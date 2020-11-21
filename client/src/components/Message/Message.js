@@ -6,8 +6,8 @@ import './Message.css';
 import ReactEmoji from 'react-emoji';
 
 const Message = ({ message: {user , text}, name }) => {
-    const d = new Date();
-    const time = d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds();
+    // const d = new Date();
+    // const time = d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds();
     // console.log(time);
 
     let isSentByCurrentUser = false;
@@ -23,7 +23,7 @@ const Message = ({ message: {user , text}, name }) => {
             ? (
                 // true
                 <div className="messageContainer justifyEnd">
-                    <p className="sentText pr-10">{trimmedName}-{time}</p>
+                    <p className="sentText pr-10">{trimmedName}</p>
                     <div className="messageBox backgroundBlue">
 
                         {/* <p className="messageText colorWhite">{text}</p> */}
@@ -43,7 +43,7 @@ const Message = ({ message: {user , text}, name }) => {
                         <p className="messageText colorDark">{ReactEmoji.emojify(text)}</p>
                     </div>
                     
-                    <p className="sentText pl-10">{time}-{user}</p>
+                    <p className="sentText pl-10">{user}</p>
 
                 </div>
             )
